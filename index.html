@@ -1,98 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>weather</title>
-    <link rel="stylesheet" href="style.js">
-</head>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Tangerine"
+    />
+  </head>
 
-<body onload="DefaultScreen()">
-    <br>
-
-    <center>
-        <div class="input-group">
-            <div class="form-outline">
-                <h1 id="Para1">5 Days Weather Forecast</h1>
-                <input type="search" id="cityInput" class="form-control" />
-
-            </div>
-            <button type="button" class="btn btn-primary" id="subtn" onclick="GetInfo()">
-                <i class="fas fa-search"> Search</i>
-            </button>
-        </div>
-        <h2 id="cityName">---Mohali---</h2>
-    </center>
-
+  <body onload="DefaultScreen()">
+    <div class="input-group">
+      <div class="form-outline">
+        <h1 id="Para1">5 Days Weather Forecast</h1>
+        <p>Enter City:</p>
+        <input type="search" id="cityInput" class="form-control" />
+      </div>
+      <button
+        type="button"
+        class="btn btn-primary"
+        id="subtn"
+        onclick="GetInfo()"
+      >
+        <i class="fas fa-search"> Search</i>
+      </button>
+    </div>
+    <h2 id="cityName">Mohali</h2>
 
     <div class="container" id="wheather">
-
-        <div id="weatherContainer">
-            <div id="iconsContainer" style="
-            display: flex; justify-content: space-around;">
-                <div class="icons" onclick="iconone() ; ">
-                    <p class="weather" id="day1"></p>
-                    <div class="image"><img src="dots.png" class="imgClass" id="img1"></div>
-                    <p class="minValues" id="day1Min">Loading...</p>
-                    <p class="maxValues" id="day1Max">Loading...</p>
-
-                </div>
-                <div class="icons" onclick="icontwo() ;">
-                    <p class="weather" id="day2"></p>
-                    <div class="image"><img src="dots.png" class="imgClass" id="img2"></div>
-                    <p class="minValues" id="day2Min">Loading...</p>
-                    <p class="maxValues" id="day2Max">Loading...</p>
-
-                </div>
-                <div class="icons" onclick="iconthree()">
-                    <p class="weather" id="day3"></p>
-                    <div class="image"><img src="dots.png" class="imgClass" id="img3"></div>
-                    <p class="minValues" id="day3Min">Loading...</p>
-                    <p class="maxValues" id="day3Max">Loading...</p>
-
-                </div>
-                <div class="icons" onclick="iconfour()">
-                    <p class="weather" id="day4"></p>
-                    <div class="image"><img src="dots.png" class="imgClass" id="img4"></div>
-                    <p class="minValues" id="day4Min">Loading...</p>
-                    <p class="maxValues" id="day4Max">Loading...</p>
-
-                </div>
-                <div class="icons" onclick="iconfive()">
-                    <p class="weather" id="day5"></p>
-                    <div class="image"><img src="dots.png" class="imgClass" id="img5"></div>
-                    <p class="minValues" id="day5Min">Loading...</p>
-                    <p class="maxValues" id="day5Max">Loading...</p>
-
-                </div>
+      <div id="weatherContainer">
+        <div id="iconsContainer">
+          <div class="icons" onclick="iconone() ; ">
+            <p class="weather" id="day1"></p>
+            <p class="weatherDate" id="da">Date</p>
+            <div class="image">
+              <img src="dots.png" class="imgClass" id="img1" />
             </div>
+            <p class="minValues" id="day1Min">Loading...</p>
+            <p class="maxValues" id="day1Max">Loading...</p>
+          </div>
+          <div class="icons" onclick="icontwo() ;">
+            <p class="weather" id="day2"></p>
+            <p class="weatherDate" id="da2">Date</p>
+            <div class="image">
+              <img src="dots.png" class="imgClass" id="img2" />
+            </div>
+            <p class="minValues" id="day2Min">Loading...</p>
+            <p class="maxValues" id="day2Max">Loading...</p>
+          </div>
+          <div class="icons" onclick="iconthree()">
+            <p class="weather" id="day3"></p>
+            <p class="weatherDate" id="da3">Date</p>
+            <div class="image">
+              <img src="dots.png" class="imgClass" id="img3" />
+            </div>
+            <p class="minValues" id="day3Min">Loading...</p>
+            <p class="maxValues" id="day3Max">Loading...</p>
+          </div>
+          <div class="icons" onclick="iconfour()">
+            <p class="weather" id="day4"></p>
+            <p class="weatherDate" id="da4">Date</p>
+            <div class="image">
+              <img src="dots.png" class="imgClass" id="img4" />
+            </div>
+            <p class="minValues" id="day4Min">Loading...</p>
+            <p class="maxValues" id="day4Max">Loading...</p>
+          </div>
+          <div class="icons" onclick="iconfive()">
+            <p class="weather" id="day5"></p>
+            <p class="weatherDate" id="da5">Date</p>
+            <div class="image">
+              <img src="dots.png" class="imgClass" id="img5" />
+            </div>
+            <p class="minValues" id="day5Min">Loading...</p>
+            <p class="maxValues" id="day5Max">Loading...</p>
+          </div>
         </div>
-
+      </div>
     </div>
-    <br><br><br>
 
-    <div class="container">
-        <table class="table table-dark ">
-            <thead>
-                <tr>
-                    <th>Time</th>
-                    <th scope="col">Min Temperatue</th>
-                    <th scope="col">Max Temperatue</th>
+    <div class="containerTwo">
+      <table class="table table-dark">
+        <thead>
+          <tr>
+            <th>Time</th>
+            <th scope="col">Min Temp.</th>
+            <th scope="col">Max Temp.</th>
+          </tr>
+        </thead>
+        <tbody id="hourreport"></tbody>
+      </table>
+    </div>
 
-                </tr>
-            </thead>
-            <tbody id="hourreport">
-            </tbody>
-
-        </table>
+    <div id="footer">
+      <q
+        >The best weather prediction for the present moment is to look out of
+        the window!</q
+      >
     </div>
 
     <script src="script.js"></script>
-</body>
-
+    <script src="https://momentjs.com/downloads/moment-with-locales.js"></script>
+  </body>
 </html>
