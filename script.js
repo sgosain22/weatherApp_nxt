@@ -28,19 +28,19 @@ function GetInfo() {
         //   console.log(newDate)
         document.getElementById("da").innerHTML = newDate;
 
-        var newDate = moment(data.list[4].dt_txt).format("ll");
+        var newDate = moment(data.list[6].dt_txt).format("ll");
         //   console.log(newDate)
         document.getElementById("da2").innerHTML = newDate;
 
-        var newDate = moment(data.list[12].dt_txt).format("ll");
+        var newDate = moment(data.list[14].dt_txt).format("ll");
         //   console.log(newDate)
         document.getElementById("da3").innerHTML = newDate;
 
-        var newDate = moment(data.list[20].dt_txt).format("ll");
+        var newDate = moment(data.list[22].dt_txt).format("ll");
         //   console.log(newDate)
         document.getElementById("da4").innerHTML = newDate;
 
-        var newDate = moment(data.list[28].dt_txt).format("ll");
+        var newDate = moment(data.list[30].dt_txt).format("ll");
         //   console.log(newDate)
         document.getElementById("da5").innerHTML = newDate;
       }
